@@ -23,7 +23,7 @@ $(document).ready(function() {
 		var longitud = $("#numero").val().length;
 		if (longitud == 9) {
 			var codigo = Math.floor(Math.random()*900) + 99;
-			alert(codigo);
+			alert("LAB" + codigo);
 		}
 	});
 });
