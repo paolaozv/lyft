@@ -1,0 +1,46 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.pd-a {
+	padding-top: 1.8em;
+	height: 100vh;
+	position: relative;
+}
+
+.verify {
+	margin-top: 0px;
+	padding-left: 8px;
+}
+
+.sub-verify {
+	padding-left: 18px;
+}
+
+.next {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+}
+
+
+.white {
+	color: #FFF;
+	background-color: #D806A3;
+	padding: 21px 0px;
+	display: inline-block;
+	width: 100%;
+}
+
+.codigo {
+	padding-top: 1.8em;
+}
+
+.numero {
+	height: 0px;
+	width: 40px;
+	border-bottom: 1px solid #000;
+	float: left;
+	display: inline-block;
+}

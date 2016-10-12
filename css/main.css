@@ -18,7 +18,7 @@
 }
 
 .logo {
-	width: 30%;
+	width: 25%;
 }
 
 .position {
@@ -28,6 +28,7 @@
 }
 
 .boton {
+	width: 100%;
 	padding: 10px 45px;
 	color: #FFF;
 }

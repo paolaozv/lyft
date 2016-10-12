@@ -22,12 +22,14 @@
 	position: absolute;
 	bottom: 0px;
 	width: 100%;
-	background-color: #D806A3;
-	padding: 20px;
 }
 
 .white {
 	color: #FFF;
+	background-color: #D806A3;
+	padding: 21px 0px;
+	display: inline-block;
+	width: 100%;
 }
 
 .boton-bandera {
