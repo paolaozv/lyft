@@ -29,3 +29,51 @@
 .white {
 	color: #FFF;
 }
+
+.boton-bandera {
+	padding-left: 8px;
+}
+
+.bandera {
+	width: 100%;
+	margin-right: 2px;
+}
+
+.input-pd {
+	padding: 0px 20px;
+}
+
+.alerta {
+	box-shadow: 1px 2px 4px rgba(254, 0, 0, .5);
+}
+
+.two-fields {
+  	width: 100%;
+}
+
+.two-fields .input-group {
+  	width: 100%;
+}
+
+.two-fields input {
+  	width: 50% !important;
+}
+
+.icon {
+	background-repeat: no-repeat;
+	padding-left: 38px;
+}
+
+#nombre {
+	background-image: url("../img/user.png");
+	background-position-x: 5%;
+	background-position-y: 51%;
+	background-size: 17%;
+}
+
+#email {
+	background-image: url("../img/email.png");
+	background-position-x: 1.2%;
+	background-position-y: 26%;
+	background-size: 11%;
+}
