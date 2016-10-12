@@ -1,0 +1,31 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.pd-a {
+	padding-top: 1.8em;
+	height: 100vh;
+	position: relative;
+}
+
+.titulo {
+	margin-top: 0px;
+	padding-left: 42px;
+}
+
+.subtitulo {
+	padding-left: 5px;
+}
+
+.next {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	background-color: #D806A3;
+	padding: 20px;
+}
+
+.white {
+	color: #FFF;
+}

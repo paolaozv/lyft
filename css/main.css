@@ -1,0 +1,48 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.fondo {
+	padding-top: 2.2em;
+	background-image: url("../img/fondo.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.relative {
+	position: relative;
+}
+
+.logo {
+	width: 30%;
+}
+
+.position {
+	position: absolute;
+	bottom: 1.8em;
+	width: 100%;
+}
+
+.position .row .pd-0 {
+	padding-left: 2px;
+	padding-right: 0px;
+}
+
+.boton {
+	padding: 10px 45px;
+	color: #FFF;
+}
+
+.boton-der {
+	background: linear-gradient(to right, #a80077 0%,#a80077 43%,#ce2767 100%);
+	border-radius: 5px;
+}
+
+.boton-izq {
+	border: 1px solid #FFF;
+	background-color: transparent;
+}
