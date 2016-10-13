@@ -5,12 +5,11 @@
 
 .fondo {
 	padding-top: 2.2em;
-	background-image: url("../img/fondo.jpg");
+	background-image: url("../img/fondo-gif.gif");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 100vh;
-	overflow: hidden;
 }
 
 .relative {

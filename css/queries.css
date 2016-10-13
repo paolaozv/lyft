@@ -1,0 +1,9 @@
+@media(min-width : 1280px) {
+    .titulo {
+        padding-left: 41%;
+    }
+
+    .subtitulo {
+		padding-left: 38%;
+    }
+}

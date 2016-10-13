@@ -9,6 +9,11 @@
 	position: relative;
 }
 
+.icon-left {
+	font-size: 2.2em;
+	color: #D806A3;
+}
+
 .verify {
 	margin-top: 0px;
 	padding-left: 8px;
@@ -23,7 +28,6 @@
 	bottom: 0px;
 	width: 100%;
 }
-
 
 .white {
 	color: #FFF;
