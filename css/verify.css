@@ -41,10 +41,14 @@
 	padding-top: 1.8em;
 }
 
-.numero {
-	height: 0px;
-	width: 40px;
-	border-bottom: 1px solid #000;
-	float: left;
-	display: inline-block;
+.num {
+	border: none;
+  	background-color: white;
+  	border-bottom: 2px solid #000 ;
+  	width: 5%;
+  	padding-left: 30px;
+}
+
+.num:focus{
+   outline: none;
 }
