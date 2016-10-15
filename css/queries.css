@@ -1,9 +1,13 @@
 @media(min-width : 1280px) {
-    .titulo {
-        padding-left: 41%;
+    .nombre {
+    	background-position-x: 1%;
+		background-position-y: 51%;
+		background-size: 4%;
     }
 
-    .subtitulo {
-		padding-left: 38%;
+    .email {
+    	background-position-x: 0.2%;
+		background-position-y: 26%;
+		background-size: 3%;
     }
 }

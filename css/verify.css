@@ -14,13 +14,13 @@
 	color: #D806A3;
 }
 
-.verify {
-	margin-top: 0px;
-	padding-left: 8px;
+.inline-block {
+	display: inline-block;
 }
 
-.sub-verify {
-	padding-left: 18px;
+.verify {
+	margin-top: 0px;
+	font-size: 1.8em;
 }
 
 .next {
@@ -44,11 +44,11 @@
 .num {
 	border: none;
   	background-color: white;
-  	border-bottom: 2px solid #000 ;
-  	width: 5%;
-  	padding-left: 30px;
+  	border-bottom: 2px solid #26ECCE;
+  	width: 3%;
+  	padding-left: 15px;
 }
 
 .num:focus{
-   outline: none;
+   	outline: none;
 }

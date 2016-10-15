@@ -3,10 +3,21 @@
 	margin: 0;
 }
 
+.relative {
+	position: relative;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
 .pd-a {
 	padding-top: 1.8em;
 	height: 100vh;
-	position: relative;
+}
+
+.pd-b {
+	padding-top: 1.5em;
 }
 
 .icon-left {
@@ -16,11 +27,11 @@
 
 .titulo {
 	margin-top: 0px;
-	padding-left: 21%;
+	font-size: 2.5em;
 }
 
 .subtitulo {
-	padding-left: 7%;
+	font-size: 1.3em;
 }
 
 .next {
@@ -70,14 +81,14 @@
 	padding-left: 38px;
 }
 
-#nombre {
+.nombre {
 	background-image: url("../img/user.png");
 	background-position-x: 5%;
 	background-position-y: 51%;
 	background-size: 17%;
 }
 
-#email {
+.email {
 	background-image: url("../img/email.png");
 	background-position-x: 1.2%;
 	background-position-y: 26%;
