@@ -52,3 +52,13 @@
 .num:focus{
    	outline: none;
 }
+
+.boton {
+	background-color: #26ECCE;
+	color: #FFF;
+	border: none;
+	border-radius: 5px;
+	height: 45px;
+	font-size: 1.3em;
+	margin-top: 0.8em;
+}
