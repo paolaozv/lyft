@@ -9,13 +9,23 @@ var cargarPagina = function() {
 	$(".num").keyup(focus);
 	$("#boton").click(nuevoAleatorio);
 	$("#sigVerify").click(validacionCod);
-	$("#sigProf").click(validacionDatos);
+	$("#sigMap").click(function() {
+		if ($("#check").is(":checked")) {
+			if (validacionDatos()) {
+				$(this).attr("href", "ubicacion.html");
+			} else {
+				alert("Ingresa tus datos correctamente!");
+			}
+		}
+	});
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(funcionExito, funcionError);
+	}
 };
 
 $(document).ready(cargarPagina);
 
 var codigoRandom = localStorage.getItem("codigo");
-var codigoRandomDos = localStorage.getItem("codigoDos");
 var numeroCel = localStorage.getItem("numCelular");
 
 var deshabilitar = function(evento) {
@@ -79,11 +89,11 @@ var focus = function(evento) {
 var validacionCod = function() {
 	var codigo = $(".num").eq(0).val() + $(".num").eq(1).val() + $(".num").eq(2).val();
 	var codUno = $(".num").eq(0).val().length;
-	if (codigoRandom == codigo || codigoRandomDos == codigo) {
+	if (codigo == codigoRandom) {
 		$(this).attr("href", "signup2.html");
 	} else if (codUno == 0) {
 		alert("Ingrese su código por favor!");
-	} else if (codigoRandom != codigo || codigoRandomDos != codigo) {
+	} else if (codigo != codigoRandom) {
 		alert("Código Inválido!");
 	}
 };
@@ -92,7 +102,8 @@ var nuevoAleatorio = function(evento) {
 	evento.preventDefault();
 	var randomDos = Math.floor(Math.random()*900) + 99;
 	alert("LAB - " + randomDos);
-	localStorage.setItem("codigoDos", randomDos);
+	localStorage.setItem("codigo", randomDos);
+	codigoRandom = randomDos;
 };
 
 var validacionDatos = function() {
@@ -102,8 +113,36 @@ var validacionDatos = function() {
 	var correo = $("#email").val().trim();
 	var regEx = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 	if (nombre > 1 && nombre < 20 && apellido > 1 && apellido < 30 && email > 5 && email < 50 && regEx.test(correo)) {
-		$(this).attr("href", "profile.html");
+		return true;
 	} else {
-		alert("Ingresa tus datos correctamente!");
+		return false;
 	}
+};
+
+var funcionExito = function(posicion) {
+	var lat = posicion.coords.latitude;
+	var lon = posicion.coords.longitude;
+	var latlon = new google.maps.LatLng(lat, lon);
+	var mapa = document.getElementById("mapa");
+
+	var myOptions = {
+	    center : latlon,zoom:14,
+	    mapTypeId : google.maps.MapTypeId.ROADMAP,
+	    mapTypeControl : true,
+	    navigationControlOptions : {
+	    style : google.maps.NavigationControlStyle.SMALL
+	   	}
+    };
+    
+    var map = new google.maps.Map(document.getElementById("mapa"), myOptions);
+
+    var marker = new google.maps.Marker({
+    	position : latlon,
+    	map : map,
+    	title : "You are here!"
+    });
+};
+
+var funcionError = function (error) {
+	console.log(error);
 };

@@ -1,0 +1,21 @@
+* {
+	box-sizing: border-box;
+}
+
+.map {
+	height: 100vh;
+	width: 100%;
+	position: relative;
+}
+
+.box {
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+}
+
+.logo {
+	margin: 0 auto;
+	width: 70px;
+	margin-top: 21px;
+}
