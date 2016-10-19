@@ -9,13 +9,43 @@
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/map.css">
 		<link href="css/queries.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
 	</head>
 	<body>
-		<div class="text-center box">
-			<img class="logo img-responsive" src="img/lyft_logo.png" alt="lyft">
+		<div class="box">
+			<img src="img/user.png" class="user-map" id="user-map">
+			<img class="logo" src="img/lyft_logo.png" alt="lyft">
 		</div>
 		<div class="map" id="mapa"></div>
-		
+		<div class="box-direction">
+			<input type="text" id="direction" class="direction" placeholder="Adress">
+			<button type="submit" class="button-map">Set pickup</button>
+		</div>
+		<div class="contenedor" id="contain">
+			<div class="none contenedor-perfil" id="perfil-usuario">
+				<div class="profile text-center">
+					<img class="image-profile" src="img/profile.svg">
+					<p id="nombre-perfil"></p>
+					<a href="profile.html" class="enlace-perfil">View profile</a>
+				</div>
+				<hr>
+				<ul class="menu">
+		         	<li><a href="#" class="enlace-menu"><span class="icon-home3 icon"></span>Home</a></li>
+		         	<hr>
+		          	<li><a href="#" class="enlace-menu"><span class="icon-gift icon"></span>Free Rides</a></li>
+		          	<hr>
+		          	<li><a href="#" class="enlace-menu"><span class="icon-history icon"></span>Ride history</a></li>
+		          	<hr>
+		          	<li><a href="#" class="enlace-menu"><span class="icon-credit-card icon"></span>Payment</a></li>
+		          	<hr>
+		          	<li><a href="#" class="enlace-menu"><span class="icon-question icon"></span>Help</a></li>
+		          	<hr>
+		          	<li><a href="#" class="enlace-menu"><span class="icon-cog icon"></span>Settings</a></li>
+		          	<hr>
+		          	<li><a href="#" class="enlace-menu"><span class="icon-spinner5 icon"></span>Sign up to drive</a></li>
+		      	</ul>
+		    </div>
+		</div>
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWleYYy-BjOvdrdCuYvEOofYMcy1byBcs" type="text/javascript"></script>
 		<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
 	    <script type="text/javascript" src="js/bootstrap.js"></script>

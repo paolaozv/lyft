@@ -12,10 +12,97 @@
 	width: 100%;
 	position: absolute;
 	z-index: 1;
+	padding: 15px;
 }
 
 .logo {
 	margin: 0 auto;
-	width: 70px;
-	margin-top: 21px;
+	width: 50px;
+	position: absolute;
+	left: 47%;
+}
+
+.user-map {
+	width: 30px;
+}
+
+.direction {
+	border: none;
+	border-radius: 5px;
+	height: 40px;
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+.button-map {
+	border-style: none;
+	background-color: #D806A3;
+	color: #FFF;
+	border-radius: 5px;
+	height: 40px;
+	width: 100%;
+	bottom: 0;
+}
+
+.box-direction {
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+	padding: 15px;
+	bottom: 0;
+}
+
+.menu {
+	list-style: none;
+}
+
+.icon {
+	color: #000;
+	font-size: 1.5em;
+	margin-right: 0.8em;
+}
+
+.enlace-menu {
+	color: #000;
+}
+
+.enlace-menu:hover {
+	text-decoration: none;
+}
+
+.image-profile {
+	width: 20%;
+	margin-top: 5px;
+	margin-bottom: 8px;
+}
+
+.contenedor {
+	width: 100%;
+	z-index: 2;
+	position: absolute;
+	top: 0;
+}
+
+.contenedor-perfil {
+	width: 50%;
+	z-index: 3;
+	background-color: #FFF;
+}
+
+.enlace-perfil {
+	color: #000;
+}
+
+.enlace-perfil:hover {
+	text-decoration: none;
+}
+
+.none {
+	display: none;
+}
+
+.opacity {
+	background-color: rgba(0, 0, 7, 0.4);
 }

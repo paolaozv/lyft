@@ -10,23 +10,27 @@ var cargarPagina = function() {
 	$("#boton").click(nuevoAleatorio);
 	$("#sigVerify").click(validacionCod);
 	$("#sigMap").click(function() {
-		if ($("#check").is(":checked")) {
-			if (validacionDatos()) {
-				$(this).attr("href", "ubicacion.html");
-			} else {
-				alert("Ingresa tus datos correctamente!");
-			}
+		if (validacionDatos()) {
+			$(this).attr("href", "ubicacion.html");
+			var nombre = $("#nombre").val();
+			localStorage.setItem("nombrePerfil", nombre);
+		} else {
+			alert("Ingresa tus datos correctamente o acepta términos y condiciones!");
 		}
 	});
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(funcionExito, funcionError);
 	}
+	$("#nombre-perfil").text(nombre);
+	$("#user-map").click(profile);
+	$("#contain").click(hide);
 };
 
 $(document).ready(cargarPagina);
 
 var codigoRandom = localStorage.getItem("codigo");
 var numeroCel = localStorage.getItem("numCelular");
+var nombre = localStorage.getItem("nombrePerfil");
 
 var deshabilitar = function(evento) {
 	var ascii = evento.keyCode;
@@ -112,7 +116,7 @@ var validacionDatos = function() {
 	var email = $("#email").val().trim().length;
 	var correo = $("#email").val().trim();
 	var regEx = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-	if (nombre > 1 && nombre < 20 && apellido > 1 && apellido < 30 && email > 5 && email < 50 && regEx.test(correo)) {
+	if (nombre > 1 && nombre < 20 && apellido > 1 && apellido < 30 && email > 5 && email < 50 && regEx.test(correo) && $("#check").is(":checked")) {
 		return true;
 	} else {
 		return false;
@@ -126,12 +130,11 @@ var funcionExito = function(posicion) {
 	var mapa = document.getElementById("mapa");
 
 	var myOptions = {
-	    center : latlon,zoom:14,
+	    center : latlon, zoom:14,
 	    mapTypeId : google.maps.MapTypeId.ROADMAP,
-	    mapTypeControl : true,
-	    navigationControlOptions : {
-	    style : google.maps.NavigationControlStyle.SMALL
-	   	}
+	    mapTypeControl : false,
+	    zoomControl : false,
+	    streetViewControl : false
     };
     
     var map = new google.maps.Map(document.getElementById("mapa"), myOptions);
@@ -143,6 +146,15 @@ var funcionExito = function(posicion) {
     });
 };
 
-var funcionError = function (error) {
+var funcionError = function(error) {
 	console.log(error);
 };
+
+var profile = function() {
+	$("#contain").addClass("opacity");
+	$("#perfil-usuario").show();
+}
+
+var hide = function() {
+	$(this).hide();
+}
