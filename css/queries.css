@@ -11,3 +11,10 @@
 		background-size: 3%;
     }
 }
+
+@media(max-width : 800px) {
+    .num {
+        padding: 2px;
+        color: #000;
+    }
+}
