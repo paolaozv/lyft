@@ -3,11 +3,9 @@
 }
 
 .foto {
-	background-image: url("../img/foto-perfil.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
 	height: 220px;
+	width: 100%;
+	position: relative;
 }
 
 .nombre-usuario {
@@ -55,9 +53,31 @@
 }
 
 .boton-foto {
-	border: none;
-	border-radius: 5px;
-	height: 35px;
-	padding: 8px;
-	margin: 10px;
+	width: 50%;
+	top: 10px;
+	left: 10px;
+	color: transparent;
+	position: absolute;
+	z-index: 1;
+}
+
+.logo-perfil {
+	position: absolute;
+	width: 15%;
+	z-index: 3;
+	right: 15px;
+	top: 10px;
+}
+
+.video {
+	width: 100%;
+	height: 220px;
+	position: absolute;
+	top: 0;
+}
+
+.camara {
+	position: absolute;
+	top: 40px;
+	left: 10px;
 }

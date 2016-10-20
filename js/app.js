@@ -28,6 +28,7 @@ var cargarPagina = function() {
 	$("#contain").click(hide);
 	$("#nombre-usuario").text(nombre);
 	$("#fecha").text(fecha);
+	$("#boton-camara").click(capturar);
 };
 
 $(document).ready(cargarPagina);
@@ -36,6 +37,7 @@ var codigoRandom = localStorage.getItem("codigo");
 var numeroCel = localStorage.getItem("numCelular");
 var nombre = localStorage.getItem("nombrePerfil");
 var fecha = localStorage.getItem("dateJoin");
+var imageProfile = localStorage.getItem("perfil");
 
 var deshabilitar = function(evento) {
 	var ascii = evento.keyCode;
@@ -149,6 +151,21 @@ var funcionExito = function(posicion) {
     	map : map,
     	title : "You are here!"
     });
+
+    var direccion = "";
+
+    geocoder = new google.maps.Geocoder();
+    geocoder.geocode({"latLng": latlon}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+                direccion =  results[0].formatted_address ;
+            } else {
+                direccion = "No se puede mostrar la dirección";
+            }
+        }
+
+    $("#direction").val(direccion);
+    });
 };
 
 var funcionError = function(error) {
@@ -171,4 +188,51 @@ var dateJoin = function() {
 	var a = f.getFullYear();
 	var fecha = meses[d] + " " + a;
 	localStorage.setItem("dateJoin", fecha);
+};
+
+var subirFoto = function(input) {
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+		reader.onload = function(evento) {
+			var imageUrl = $("#image").attr("src", evento.target.result);
+			localStorage.setItem("perfil", imageUrl);
+		}
+		reader.readAsDataURL(input.files[0]);
+	}
+};
+
+$("#inputFile").change(function() {
+	subirFoto(this);
+});
+
+var error = function(error) {
+	console.log("Error:", error.name);
+};
+
+var capturar = function() {
+	// Estándar
+	if(navigator.getUserMedia) {
+		navigator.getUserMedia({ "video": true}, function(stream) {
+		video.src = stream;
+		video.play();
+		}, error);
+	}
+	// prefijo WebKit
+	else if(navigator.webkitGetUserMedia) {
+		navigator.webkitGetUserMedia({ "video": true}, function(stream){
+		video.src = window.URL.createObjectURL(stream);
+		video.play();
+		}, error);
+	}
+	// prefijo Moz
+	else if(navigator.mozGetUserMedia) {
+		navigator.mozGetUserMedia({ "video": true}, function(stream){
+		video.src = window.URL.createObjectURL(stream);
+		video.play();
+		}, error);
+	}
+	// Navegadores no compatibles
+	else {
+		alert("Tu navegador no es compatible con getUserMedia");
+	}
 };

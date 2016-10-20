@@ -12,9 +12,13 @@
 	</head>
 	<body>
 		<div class="section">
-			<div class="foto">
-				<button type="button" class="boton-foto pull-right">Edit profile</button>
-			</div>
+			<a href="ubicacion.html"><img src="img/lyft_logo.png" class="logo-perfil" alt="lyft"></a>
+			<form runat="server">
+				<input type="file" class="boton-foto" id="inputFile">
+				<img src="img/foto-perfil.jpg" class="foto" id="image" alt="perfil">
+			</form>
+			<video id="video" autoplay="autoplay" class="video"></video>
+			<button id="boton-camara" class="camara">Picture</button>
 			<div class="text-center">
 				<p id="nombre-usuario" class="text-center nombre-usuario"></p>
 				<p class="joined">JOINED <span id="fecha"></span></p>
