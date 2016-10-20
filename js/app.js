@@ -37,7 +37,6 @@ var codigoRandom = localStorage.getItem("codigo");
 var numeroCel = localStorage.getItem("numCelular");
 var nombre = localStorage.getItem("nombrePerfil");
 var fecha = localStorage.getItem("dateJoin");
-var imageProfile = localStorage.getItem("perfil");
 
 var deshabilitar = function(evento) {
 	var ascii = evento.keyCode;
@@ -154,7 +153,7 @@ var funcionExito = function(posicion) {
 
     var direccion = "";
 
-    geocoder = new google.maps.Geocoder();
+    var geocoder = new google.maps.Geocoder();
     geocoder.geocode({"latLng": latlon}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             if (results[0]) {
@@ -195,7 +194,6 @@ var subirFoto = function(input) {
 		var reader = new FileReader();
 		reader.onload = function(evento) {
 			var imageUrl = $("#image").attr("src", evento.target.result);
-			localStorage.setItem("perfil", imageUrl);
 		}
 		reader.readAsDataURL(input.files[0]);
 	}
@@ -235,4 +233,9 @@ var capturar = function() {
 	else {
 		alert("Tu navegador no es compatible con getUserMedia");
 	}
+
+	var canvas = document.querySelector("canvas");
+	canvas.getContext("2d").drawImage(video, 0, 0);
+	var data = canvas.toDataURL("image/png");
+	document.getElementById("image").setAttribute("src", data);
 };
