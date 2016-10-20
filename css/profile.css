@@ -54,4 +54,8 @@
 
 .take-picture {
 	color: transparent;
+	position: absolute;
+	top: 20px;
+	right: 10px;
+	width: 45%;
 }
