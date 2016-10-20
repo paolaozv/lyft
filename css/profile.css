@@ -52,33 +52,6 @@
 	height: 100vh;
 }
 
-.boton-foto {
-	width: 50%;
-	top: 10px;
-	left: 10px;
+.take-picture {
 	color: transparent;
-	position: absolute;
-	z-index: 1;
-}
-
-.video {
-	width: 100%;
-	height: 220px;
-	position: absolute;
-	top: 0;
-}
-
-.camara {
-	position: absolute;
-	top: 40px;
-	left: 10px;
-}
-
-.tamanio {
-	width: 100%;
-	height: 220px;
-}
-
-.none {
-	display: none;
 }
