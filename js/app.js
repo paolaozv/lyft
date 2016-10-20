@@ -28,7 +28,7 @@ var cargarPagina = function() {
 	$("#contain").click(hide);
 	$("#nombre-usuario").text(nombre);
 	$("#fecha").text(fecha);
-	$("#boton-camara").click(capturar);
+	$("#cameraInput").change(capturar);
 };
 
 $(document).ready(cargarPagina);
@@ -207,35 +207,11 @@ var error = function(error) {
 	console.log("Error:", error.name);
 };
 
-var capturar = function() {
-	// Estándar
-	if(navigator.getUserMedia) {
-		navigator.getUserMedia({ "video": true}, function(stream) {
-		video.src = stream;
-		video.play();
-		}, error);
-	}
-	// prefijo WebKit
-	else if(navigator.webkitGetUserMedia) {
-		navigator.webkitGetUserMedia({ "video": true}, function(stream){
-		video.src = window.URL.createObjectURL(stream);
-		video.play();
-		}, error);
-	}
-	// prefijo Moz
-	else if(navigator.mozGetUserMedia) {
-		navigator.mozGetUserMedia({ "video": true}, function(stream){
-		video.src = window.URL.createObjectURL(stream);
-		video.play();
-		}, error);
-	}
-	// Navegadores no compatibles
-	else {
-		alert("Tu navegador no es compatible con getUserMedia");
-	}
-
-	var canvas = document.querySelector("canvas");
-	canvas.getContext("2d").drawImage(video, 0, 0);
-	var data = canvas.toDataURL("image/png");
-	document.getElementById("image").setAttribute("src", data);
+var capturar = function(event) {
+       if(event.target.files.length == 1 && 
+          event.target.files[0].type.indexOf("image/") == 0) {
+           $("#image").attr("src",URL.createObjectURL(event.target.files[0]));
+       }
+   
+	
 };
