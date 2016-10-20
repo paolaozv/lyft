@@ -78,6 +78,10 @@
 	margin-bottom: 8px;
 }
 
+.none {
+	display: none;
+}
+
 .contenedor {
 	width: 100%;
 	z-index: 2;
@@ -86,9 +90,10 @@
 }
 
 .contenedor-perfil {
-	width: 50%;
+	width: 60%;
 	z-index: 3;
 	background-color: #FFF;
+	height: 100vh;
 }
 
 .enlace-perfil {
@@ -97,10 +102,6 @@
 
 .enlace-perfil:hover {
 	text-decoration: none;
-}
-
-.none {
-	display: none;
 }
 
 .opacity {

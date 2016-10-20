@@ -3,5 +3,61 @@
 }
 
 .foto {
-	width: 90%;
+	background-image: url("../img/foto-perfil.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 220px;
+}
+
+.nombre-usuario {
+	font-size: 2.2em;
+	font-weight: bold;
+	margin-top: 0.5em;
+}
+
+.joined {
+	background-color: #C4CCDF;
+	width: 70%;
+	border-radius: 5px;
+	margin: 0 auto;
+	font-weight: 1.3em;
+	font-weight: bold;
+}
+
+.like-list {
+	list-style: none;
+}
+
+.like {
+	margin-top: 30px;
+}
+
+.icon-like {
+	font-size: 1.2em;
+	margin-right: 0.8em;
+}
+
+.icon-l:hover {
+	text-decoration: none;
+}
+
+.like-list li {
+	margin-bottom: 0.8em;
+}
+
+.icon-l {
+	color: #000;
+}
+
+.section {
+	height: 100vh;
+}
+
+.boton-foto {
+	border: none;
+	border-radius: 5px;
+	height: 35px;
+	padding: 8px;
+	margin: 10px;
 }

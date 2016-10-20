@@ -14,6 +14,7 @@ var cargarPagina = function() {
 			$(this).attr("href", "ubicacion.html");
 			var nombre = $("#nombre").val();
 			localStorage.setItem("nombrePerfil", nombre);
+			dateJoin();
 		} else {
 			alert("Ingresa tus datos correctamente o acepta términos y condiciones!");
 		}
@@ -22,8 +23,11 @@ var cargarPagina = function() {
 		navigator.geolocation.getCurrentPosition(funcionExito, funcionError);
 	}
 	$("#nombre-perfil").text(nombre);
+	$("#contain").hide();
 	$("#user-map").click(profile);
 	$("#contain").click(hide);
+	$("#nombre-usuario").text(nombre);
+	$("#fecha").text(fecha);
 };
 
 $(document).ready(cargarPagina);
@@ -31,6 +35,7 @@ $(document).ready(cargarPagina);
 var codigoRandom = localStorage.getItem("codigo");
 var numeroCel = localStorage.getItem("numCelular");
 var nombre = localStorage.getItem("nombrePerfil");
+var fecha = localStorage.getItem("dateJoin");
 
 var deshabilitar = function(evento) {
 	var ascii = evento.keyCode;
@@ -152,9 +157,18 @@ var funcionError = function(error) {
 
 var profile = function() {
 	$("#contain").addClass("opacity");
-	$("#perfil-usuario").show();
-}
+	$("#contain").show("slow");
+};
 
 var hide = function() {
-	$(this).hide();
-}
+	$(this).hide("slow");
+};
+
+var dateJoin = function() {
+	var meses = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "December"];
+	var f = new Date();
+	var d = f.getMonth();
+	var a = f.getFullYear();
+	var fecha = meses[d] + " " + a;
+	localStorage.setItem("dateJoin", fecha);
+};
