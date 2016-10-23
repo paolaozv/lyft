@@ -1,7 +1,8 @@
 var cargarMapa = function() {
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(funcionExito, funcionError);
-	}	
+	}
+    $("#go-to").click(irDestino);
 };
 
 $(document).ready(cargarMapa);
@@ -13,7 +14,7 @@ var funcionExito = function(posicion) {
 	var mapa = document.getElementById("mapa");
 
 	var myOptions = {
-	    center : latlon, zoom:14,
+	    center : latlon, zoom: 14,
 	    mapTypeId : google.maps.MapTypeId.ROADMAP,
 	    mapTypeControl : false,
 	    zoomControl : false,
@@ -47,3 +48,48 @@ var funcionExito = function(posicion) {
 var funcionError = function(error) {
 	console.log(error);
 };
+
+var irDestino = function() {
+    var direccion = $("#destiny").val();
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ "address": direccion} , destino);
+};
+
+var destino = function(result, status){
+    if (status == "OK"){
+        var mapOptions = {
+            center: result[0].geometry.location,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById("mapa"), mapOptions);
+        map.fitBounds(result[0].geometry.viewport);
+
+        var markerOptions = { position: result[0].geometry.location }
+        var marker = new google.maps.Marker(markerOptions);
+        marker.setMap(map);
+
+    } else {
+        alert("No existe dirección!")
+    }
+
+    $("#destiny").val("") ;
+    $("#show-destiny").hide();
+};
+
+/*var calcularRuta = function() {
+    var start = document.getElementById("direction").value;
+    var end = document.getElementById("destiny").value;
+    var request = {
+        origin: start,
+        destination: end,
+        travelMode: google.maps.TravelMode.DRIVING
+    };
+    directionsService.route(request, ruta);
+};
+
+var ruta = function(result, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(result);
+    }
+};*/

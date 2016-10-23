@@ -5,7 +5,6 @@
 .foto {
 	height: 220px;
 	width: 100%;
-	position: relative;
 }
 
 .nombre-usuario {
@@ -16,11 +15,33 @@
 
 .joined {
 	background-color: #C4CCDF;
-	width: 70%;
+	width: 65%;
 	border-radius: 5px;
 	margin: 0 auto;
-	font-weight: 1.3em;
+	font-size: 1.2em;
 	font-weight: bold;
+	height: 35px;
+	padding-top: 6px;
+}
+
+.points {
+	font-size: 1.2em;
+	color: #D806A3;
+	position: absolute;
+	top: 8px;
+	left: 8px;
+}
+
+.edit {
+	color: #D806A3;
+	position: absolute;
+	top: 8px;
+	right: 10px;
+	font-weight: bold;
+}
+
+.edit:visited {
+	text-decoration: none;
 }
 
 .like-list {
@@ -28,7 +49,7 @@
 }
 
 .like {
-	margin-top: 30px;
+	margin-top: 45px;
 }
 
 .icon-like {
@@ -50,12 +71,4 @@
 
 .section {
 	height: 100vh;
-}
-
-.take-picture {
-	color: transparent;
-	position: absolute;
-	top: 20px;
-	right: 10px;
-	width: 45%;
 }

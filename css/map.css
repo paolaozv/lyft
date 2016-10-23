@@ -19,7 +19,7 @@
 	margin: 0 auto;
 	width: 50px;
 	position: absolute;
-	left: 47%;
+	left: 42%;
 }
 
 .user-map {
@@ -106,4 +106,16 @@
 
 .opacity {
 	background-color: rgba(0, 0, 7, 0.4);
+}
+
+.fondo-opaco {
+	background-color: rgba(0, 0, 7, 0.4);
+	border-radius: 5px;
+	width: 85%;
+	height: 135px;
+	padding: 20px;
+	margin-left: 7.5%;
+	position: absolute;
+	bottom: 35px;
+	z-index: 1;
 }

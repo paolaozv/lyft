@@ -49,11 +49,12 @@
 }
 
 .boton-bandera {
-	padding-left: 8px;
+	padding-left: 5px;
 }
 
 .bandera {
 	margin-right: 2px;
+	width: 17px;
 }
 
 .input-pd {

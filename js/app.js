@@ -19,13 +19,15 @@ var cargarPagina = function() {
 			alert("Ingresa tus datos correctamente o acepta términos y condiciones!");
 		}
 	});
+	$("#direction").focus();
 	$("#nombre-perfil").text(nombre);
 	$("#contain").hide();
 	$("#user-map").click(profile);
 	$("#contain").click(hide);
 	$("#nombre-usuario").text(nombre);
 	$("#fecha").text(fecha);
-	$("#cameraInput").change(capturar);
+	/*$("#cameraInput").change(capturar);*/
+	$("#destino").click(apareceDestino);
 };
 
 $(document).ready(cargarPagina);
@@ -166,4 +168,9 @@ var capturar = function(event) {
     if(event.target.files.length == 1 && event.target.files[0].type.indexOf("image/") == 0) {
         $("#image").attr("src", URL.createObjectURL(event.target.files[0]));
     }	
+};
+
+var apareceDestino = function() {
+	$("#show-destiny").show();
+	$("#destiny").focus();
 };
