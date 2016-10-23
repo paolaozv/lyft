@@ -18,3 +18,9 @@
         color: #000;
     }
 }
+
+@media(max-height : 310px) {
+    .next {
+        display: none;
+    }
+}

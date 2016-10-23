@@ -14,9 +14,13 @@ var cargarPagina = function() {
 			$(this).attr("href", "ubicacion.html");
 			var nombre = $("#nombre").val();
 			localStorage.setItem("nombrePerfil", nombre);
+			var apellido = $("#apellido").val();
+			localStorage.setItem("apellidoPerfil", apellido);
+			var email = $("#email").val();
+			localStorage.setItem("emailPerfil", email);
 			dateJoin();
 		} else {
-			alert("Ingresa tus datos correctamente o acepta términos y condiciones!");
+			alert("Enter your data correctly or accept terms and conditions!");
 		}
 	});
 	$("#direction").focus();
@@ -26,8 +30,16 @@ var cargarPagina = function() {
 	$("#contain").click(hide);
 	$("#nombre-usuario").text(nombre);
 	$("#fecha").text(fecha);
-	/*$("#cameraInput").change(capturar);*/
+	$("#cameraInput").change(capturar);
 	$("#destino").click(apareceDestino);
+	$("#name-prof").val(nombre);
+	$("#last-prof").val(apellido);
+	$("#email-prof").val(email);
+	if (image != null) {
+		$("#image-map").attr("src", image);
+		$("#image").attr("src", image);
+		$("#image-prof").attr("src", image);
+	}
 };
 
 $(document).ready(cargarPagina);
@@ -35,7 +47,10 @@ $(document).ready(cargarPagina);
 var codigoRandom = localStorage.getItem("codigo");
 var numeroCel = localStorage.getItem("numCelular");
 var nombre = localStorage.getItem("nombrePerfil");
+var apellido = localStorage.getItem("apellidoPerfil");
+var email = localStorage.getItem("emailPerfil");
 var fecha = localStorage.getItem("dateJoin");
+var image = localStorage.getItem("fotoAlmacenada");
 
 var deshabilitar = function(evento) {
 	var ascii = evento.keyCode;
@@ -101,9 +116,9 @@ var validacionCod = function() {
 	if (codigo == codigoRandom) {
 		$(this).attr("href", "signup2.html");
 	} else if (codUno == 0) {
-		alert("Ingrese su código por favor!");
+		alert("Enter your code please!");
 	} else if (codigo != codigoRandom) {
-		alert("Código Inválido!");
+		alert("Invalid code!");
 	}
 };
 
@@ -146,28 +161,17 @@ var dateJoin = function() {
 	localStorage.setItem("dateJoin", fecha);
 };
 
-var subirFoto = function(input) {
-	if (input.files && input.files[0]) {
-		var reader = new FileReader();
-		reader.onload = function(evento) {
-			var imageUrl = $("#image").attr("src", evento.target.result);
-		}
-		reader.readAsDataURL(input.files[0]);
-	}
-};
-
-$("#inputFile").change(function() {
-	subirFoto(this);
-});
-
-var error = function(error) {
-	console.log("Error:", error.name);
-};
-
 var capturar = function(event) {
-    if(event.target.files.length == 1 && event.target.files[0].type.indexOf("image/") == 0) {
-        $("#image").attr("src", URL.createObjectURL(event.target.files[0]));
-    }	
+    if(event.target.files && event.target.files[0]){
+		var reader = new FileReader();
+
+		reader.onload = function(event){
+			var recuperar = event.target.result;
+			$("#image-prof").attr("src", recuperar);
+			localStorage.setItem("fotoAlmacenada", recuperar);
+		}
+		reader.readAsDataURL(event.target.files[0]);
+	}	
 };
 
 var apareceDestino = function() {
