@@ -84,7 +84,7 @@ var getRuta = function(result, status) {
     if (status == google.maps.DirectionsStatus.OK) {
         directionsRenderer.setDirections(result);
     } else {
-        alert("Ha ocurrido un error");
+        alert("An error has occurred");
     }
     $("#destiny").val("");
     $("#show-destiny").hide();
