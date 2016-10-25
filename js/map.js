@@ -45,7 +45,7 @@ var showMap = function(lat, lon) {
             if (results[0]) {
                 direccion =  results[0].formatted_address ;
             } else {
-                direccion = "No se puede mostrar la dirección";
+                direccion = "It can not show direction";
             }
         }
 
