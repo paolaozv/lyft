@@ -153,7 +153,7 @@ var hide = function() {
 };
 
 var dateJoin = function() {
-	var meses = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "December"];
+	var meses = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	var f = new Date();
 	var d = f.getMonth();
 	var a = f.getFullYear();
