@@ -15,7 +15,7 @@
 
 .joined {
 	background-color: #C4CCDF;
-	width: 65%;
+	width: 85%;
 	border-radius: 5px;
 	margin: 0 auto;
 	font-size: 1.2em;
@@ -109,5 +109,5 @@
 .datos {
 	width: 75%;
 	margin-top: 2.5em;
-	margin-left: 1.9em;
+	margin-left: 2.9em;
 }

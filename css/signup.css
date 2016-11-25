@@ -76,22 +76,3 @@
 .two-fields input {
   	width: 50% !important;
 }
-
-.icon {
-	background-repeat: no-repeat;
-	padding-left: 38px;
-}
-
-.nombre {
-	background-image: url("../img/user.png");
-	background-position-x: 5%;
-	background-position-y: 51%;
-	background-size: 17%;
-}
-
-.email {
-	background-image: url("../img/email.png");
-	background-position-x: 1.2%;
-	background-position-y: 26%;
-	background-size: 11%;
-}

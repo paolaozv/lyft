@@ -135,7 +135,7 @@ var validacionDatos = function() {
 	var apellido = $("#apellido").val().trim().length;
 	var email = $("#email").val().trim().length;
 	var correo = $("#email").val().trim();
-	var regEx = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+	var regEx = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 	if (nombre > 1 && nombre < 20 && apellido > 1 && apellido < 30 && email > 5 && email < 50 && regEx.test(correo) && $("#check").is(":checked")) {
 		return true;
 	} else {
