@@ -68,6 +68,7 @@ var travelToAddress = function() {
             var latitude = results[0].geometry.location.lat();
             var  longitude = results[0].geometry.location.lng();
             desLatlon =new google.maps.LatLng(latitude, longitude);
+            directionsService.route(request,getRuta);
         } 
     });
 
@@ -76,8 +77,6 @@ var travelToAddress = function() {
         destination: destino,
         travelMode: google.maps.DirectionsTravelMode.DRIVING
     };
-
-    directionsService.route(request,getRuta);
 };
 
 var getRuta = function(result, status) {
